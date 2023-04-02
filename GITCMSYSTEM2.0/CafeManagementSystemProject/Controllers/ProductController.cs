@@ -36,9 +36,9 @@ namespace CafeManagementSystemProject.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        public IActionResult EditProduct(int id)
+        public IActionResult EditProduct(int product_id)
         {
-            var product = productService.GetById(id);
+            var product = productService.GetById(product_id);
 
             return View(product);
         }

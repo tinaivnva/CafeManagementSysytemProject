@@ -1,6 +1,7 @@
 ﻿using CafeManagementSystemProject.DataFolder;
 using CafeManagementSystemProject.Models;
 using CafeManagementSystemProject.Repositories.Interfaces;
+using CMSy.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CafeManagementSystemProject.Repositories
@@ -18,6 +19,11 @@ namespace CafeManagementSystemProject.Repositories
             context.SaveChanges();
         }
 
+        public IEnumerable<Order> GetAll()
+            => context.Order.ToList();
+        public Order GetById(int table_id)
+        => context.Order.FirstOrDefault(o => o.TableId == table_id);
+
         public void AddProductToOrder(Product product)
         {
             context.Add(product);
@@ -29,5 +35,14 @@ namespace CafeManagementSystemProject.Repositories
             context.SaveChanges();
         }
 
+        public string CheckOut()
+        {
+            context.Find<Order>();
+            context.Find<Product>();
+            context.Find<OrdersProducts>();
+            context.Add(new List<Product>());
+            context.SaveChanges();
+            return CheckOut();
+        }
     }
 }

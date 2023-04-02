@@ -22,6 +22,12 @@ namespace CafeManagementSystemProject.Controllers
             return RedirectToAction(nameof(AddProductToOrder));
         }
 
+        [HttpPost]
+        public IActionResult Index()
+        {
+            var orders = orderService.GetById;
+            return View(orders);
+        }
 
         [HttpPost]
         public IActionResult AddProductToOrder(Product product)
@@ -39,6 +45,10 @@ namespace CafeManagementSystemProject.Controllers
             return RedirectToAction(nameof(AddProductToOrder));
         }
 
-
+        [HttpPost]
+        public IActionResult CheckOut()
+        {
+            return View(nameof(CheckOut));
+        }
     }
 }
