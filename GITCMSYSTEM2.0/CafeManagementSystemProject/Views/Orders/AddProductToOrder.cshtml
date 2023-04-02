@@ -1,0 +1,24 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    <h2> Add product to order</h2>
+
+    <form method="post" asp-controller="Order" asp-action="AddProductToOrder">
+        <p>
+            <span>ProductId:</span>
+            <input type="number" name="product_id" />
+        </p>    
+        <p>
+            <span>OrderId:</span>
+            <input type="number" name="order_id" />
+        </p>
+        <p>
+            <span>Quantity:</span>
+            <input type="number" name="quantity" />
+        </p>
+
+        <button type="submit">Create Product</button>
+    </form>
+}n
+
