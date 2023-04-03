@@ -6,9 +6,9 @@ namespace CafeManagementSystemProject.Repositories
 {
     public class ProductRepository : IProductRepository
     {
-        private MVCProductDbContext context;
+        private MVCOrderDbContext context;
 
-        public ProductRepository(MVCProductDbContext context)
+        public ProductRepository(MVCOrderDbContext context)
         {
             this.context = context;
         }

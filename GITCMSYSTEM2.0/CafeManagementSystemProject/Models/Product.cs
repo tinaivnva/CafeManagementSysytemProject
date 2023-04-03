@@ -45,6 +45,10 @@ namespace CafeManagementSystemProject.Models
             IsCold = is_cold;
             IsVegan = is_vegan;
         }
+        public Product()
+        {
+
+        }
 
     }
 }

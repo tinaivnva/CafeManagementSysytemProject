@@ -5,7 +5,7 @@ using CafeManagementSystemProject.Repositories.Interfaces;
 
 namespace CafeManagementSystemProject.Services
 {
-    public class ProductService : IProductRepository
+    public class ProductService : IProductService
     {
         private IProductRepository productRepository;
         public ProductService(IProductRepository productRepository)

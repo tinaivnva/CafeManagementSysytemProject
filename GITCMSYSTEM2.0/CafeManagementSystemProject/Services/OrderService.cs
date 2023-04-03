@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace CafeManagementSystemProject.Services
 {
-    public class OrderService : IOrderRepository
+    public class OrderService : IOrderService
     {
         private IOrderRepository orderRepository;
         public OrderService(IOrderRepository orderRepository)

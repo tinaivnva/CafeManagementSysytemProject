@@ -10,5 +10,6 @@ namespace CafeManagementSystemProject.DataFolder
 
         }
         public DbSet<Order> Order { get; set; }
+        public DbSet<Product> Products { get; set; }
     }
 }

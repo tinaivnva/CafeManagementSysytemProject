@@ -9,10 +9,11 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<MVCOrderDbContext>(c =>
     c.UseMySQL("Server=127.0.0.1;Database=tina;Uid=root;Pwd=TinaITsveti;"));
 // Add services to the container.
-builder.Services.AddDbContext<MVCProductDbContext>(c =>
-    c.UseMySQL("Server=127.0.0.1;Database=tina;Uid=root;Pwd=TinaITsveti;"));
+
 builder.Services.AddScoped < IProductRepository, ProductRepository > ();
 builder.Services.AddScoped<IOrderRepository, OrderRepository>();
+builder.Services.AddScoped<IProductService, ProductService>();
+builder.Services.AddScoped<IOrderService, OrderService>();
 builder.Services.AddRazorPages();
 
 var app = builder.Build();

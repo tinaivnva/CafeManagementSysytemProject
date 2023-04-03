@@ -28,5 +28,9 @@ namespace CafeManagementSystemProject.Models
             TableId = table_id;
             OrderId = order_id;
         }
+        public Order()
+        {
+
+        }
     }
 }
