@@ -1,4 +1,4 @@
-﻿namespace CMSy.Models
+﻿namespace CafeManagementSystemProject.Models
 {
     public class OrdersProducts
     {

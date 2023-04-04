@@ -1,35 +1,51 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-    <h2> Create Product</h2>
+﻿@using System.Threading.Tasks;
+@using CafeManagementSystemProject.Models;
+@using CafeManagementSystemProject.Services;
+@using CafeManagementSystemProject.Repositories;
+@inject ProductService IProductService;
+@inject Product product;
+@model List<Product>
 
-    <form method="post" asp-controller="Product" asp-action="CreateProduct">
-        <p>
-            <span>ProductId:</span>
-            <input type="number" name="roduct_id" />
-        </p>    
-        <p>
-            <span>ProductName:</span>
-            <input type="text" name="productName" />
-        </p>
-        <p>
-            <span>ProductType:</span>
-            <input type="text" name="productType" />
-        </p>
-        <p>
-            <span>Price:</span>
-            <input type="number" name="price" />
-        </p>
-        <p>
-            <span>IsItCold:</span>
-            <input type="checkbox" name="is_cold" />
-        </p>
-        <p>
-            <span>IsItVegan:</span>
-            <input type="checkbox" name="is_vegan" />
-        </p>
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <title>Create Products</title>
+        </head>
+        <body>
+            <div>
+                <h1>Add Product</h1>
+                <form method="post" asp-controller="ProductController" asp-action="CreateProduct" asp-route="@Model.ToList()">
+            <p>
+                <span>Product Id:</span>
+                <input type="number" name="roduct_id" />
+            </p>
+            <p>
+                <span>Product Name:</span>
+                <input type="text" name="productName" />
+            </p>
+            <p>
+                <span>Product Type:</span>
+                <input type="text" name="productType" />
+            </p>
+            <p>
+                <span>Price:</span>
+                <input type="number" name="price" />
+            </p>
+            <p>
+                <span>Is it Cold:</span>
+                <input type="checkbox" name="is_cold" />
+            </p>
+            <p>
+                <span>Is it Vegan:</span>
+                <input type="checkbox" name="is_vegan" />
+            </p>
 
-        <button type="submit">Create Product</button>
-    </form>
-}n
+            <button type="submit">Create Product</button>
+            <button>
+                < asp-controller="Product" asp-action="Index">Cancel</>
+            </button>
+                </form>
+            </div>
+        </body>
+    </html>
+

@@ -13,7 +13,7 @@ namespace CafeManagementSystemProject.Repositories
             this.context = context;
         }
 
-        public IEnumerable<Product> GetAll()
+        public List<Product> GetAll()
             => context.Products.ToList();
 
         public Product GetById(int product_id)

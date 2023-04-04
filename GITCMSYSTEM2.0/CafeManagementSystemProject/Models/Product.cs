@@ -7,6 +7,7 @@ namespace CafeManagementSystemProject.Models
         private int product_id;
         private double price;
         private string productName;
+        private string productType;
         private bool is_cold;
         private bool is_vegan;
 
@@ -25,6 +26,11 @@ namespace CafeManagementSystemProject.Models
             get { return productName; }
             set { productName = value; }
         }
+        public string ProductType
+        {
+            get { return productType; } 
+            set { productType = value; }
+        }
         public bool IsCold
         {
             get { return is_cold; }
@@ -42,6 +48,7 @@ namespace CafeManagementSystemProject.Models
             ProductId = product_id;
             Price = price;
             ProductName = productName;
+            ProductType = productType;
             IsCold = is_cold;
             IsVegan = is_vegan;
         }

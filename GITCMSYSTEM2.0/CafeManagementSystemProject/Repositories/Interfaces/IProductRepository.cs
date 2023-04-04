@@ -5,7 +5,7 @@ namespace CafeManagementSystemProject.Repositories.Interfaces
 {
     public interface IProductRepository
     {
-        IEnumerable<Product> GetAll();
+            List<Product> GetAll();
         Product GetById(int product_id);
 
         public void AddProduct(Product product);

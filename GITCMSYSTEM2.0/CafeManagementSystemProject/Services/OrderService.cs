@@ -1,8 +1,7 @@
 ﻿using CafeManagementSystemProject.Models;
-
 using CafeManagementSystemProject.Repositories.Interfaces;
 using CafeManagementSystemProject.Services.Interfaces;
-using CMSy.Models;
+using CafeManagementSystemProject.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CafeManagementSystemProject.Services
@@ -21,7 +20,7 @@ namespace CafeManagementSystemProject.Services
             orders.Add(order);
         }
 
-        public IEnumerable<Order> GetAll()
+        public List<Order> GetAll()
            => orderRepository.GetAll();
 
 

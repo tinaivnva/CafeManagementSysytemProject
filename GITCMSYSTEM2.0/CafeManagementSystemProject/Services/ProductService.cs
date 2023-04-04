@@ -12,7 +12,7 @@ namespace CafeManagementSystemProject.Services
         {
             this.productRepository = productRepository;
         }
-        public IEnumerable<Product> GetAll()
+        public List<Product> GetAll()
         => productRepository.GetAll();
 
         public Product GetById(int iproduct_id)

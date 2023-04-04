@@ -25,7 +25,7 @@ namespace CafeManagementSystemProject.Controllers
         [HttpPost]
         public IActionResult Index()
         {
-            var orders = orderService.GetById;
+            var orders = orderService.GetAll();
             return View(orders);
         }
 
@@ -42,13 +42,14 @@ namespace CafeManagementSystemProject.Controllers
         {
             orderService.RemoveProductFromOrder(product);
 
-            return RedirectToAction(nameof(AddProductToOrder));
+            return RedirectToAction(nameof(Index));
         }
 
         [HttpPost]
         public IActionResult CheckOut()
         {
-            return View(nameof(CheckOut));
+            orderService.CheckOut();
+            return RedirectToAction(nameof(Index));
         }
     }
 }
