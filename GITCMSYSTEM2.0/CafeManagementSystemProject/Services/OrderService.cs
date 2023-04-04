@@ -1,7 +1,6 @@
 ﻿using CafeManagementSystemProject.Models;
 using CafeManagementSystemProject.Repositories.Interfaces;
 using CafeManagementSystemProject.Services.Interfaces;
-using CafeManagementSystemProject.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CafeManagementSystemProject.Services
@@ -16,8 +15,7 @@ namespace CafeManagementSystemProject.Services
 
         public void AddOrder(Order order)
         {
-            List<Order> orders = new List<Order>();
-            orders.Add(order);
+            orderRepository.AddOrder(order);
         }
 
         public List<Order> GetAll()
@@ -28,13 +26,11 @@ namespace CafeManagementSystemProject.Services
         => orderRepository.GetById(table_id);
         public void AddProductToOrder(Product product)
         {
-            List<Product> products = new List<Product>();
-            products.Add(product);
+            orderRepository.AddProductToOrder(product);
         }
         public void RemoveProductFromOrder(Product product)
         {
-            var list = new List<Product>();
-            list.Remove(product);
+            orderRepository.RemoveProductFromOrder(product);
         }
 
         public string CheckOut()

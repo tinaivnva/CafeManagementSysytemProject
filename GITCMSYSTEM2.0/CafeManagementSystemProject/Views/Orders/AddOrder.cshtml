@@ -15,18 +15,15 @@
             <h1>Place your order here :)</h1>
             <form method="post" asp-controller="OrderController" asp-action="AddOrder" asp-route="@Model.ToList()">
                 <p>
-                    <span>ProductId:</span>
+                    <span>Oredr Id:</span>
                     <input type="number" name="order_id" />
                 </p>
                 <p>
-                    <span>TableNumber:</span>
+                    <span>Table Number:</span>
                     <input type="number" name="productType" />
                 </p>
 
-                <button type="submit">Add Order</button>
-                <button>
-                    < asp-controller="Order" asp-action="Index">Cancel</>
-                </button>
+                <button>type="submit" formaction="AddProductToOrder.cshtml">Add Order</button>
             </form>
          </div>
     </body>
