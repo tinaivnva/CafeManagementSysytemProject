@@ -30,6 +30,7 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
+Seed.SeedData(app);
 
 app.UseAuthorization();
 
